@@ -2,6 +2,7 @@ package com.example.almacenamiento
 
 import android.os.Bundle
 import android.util.Log
+import java.io.File
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -40,11 +41,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         val arrayArchivos: Array<String> = fileList()
-
         arrayArchivos.forEach { name ->
             Log.i("Stored", name)
-
         }
 
+        val cacheFile = File.createTempFile("session_tmp", ".dat", cacheDir)
+        cacheFile.writeText("ID_Sesion: 0x99283")
     }
 }
