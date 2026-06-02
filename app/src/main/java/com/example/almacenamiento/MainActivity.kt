@@ -32,5 +32,10 @@ class MainActivity : AppCompatActivity() {
         openFileOutput(filename, MODE_PRIVATE).use { output ->
             output.write(fileContents.toByteArray())
         }
+
+        openFileInput(filename).bufferedReader().use { reader ->
+            val text = reader.readText()
+            binding.tvFileContent.text = text
+        }
     }
 }

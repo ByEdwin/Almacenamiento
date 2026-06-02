@@ -17,4 +17,12 @@
         android:padding="16dp"
         android:textAlignment="center" />
 
+    <TextView
+        android:id="@+id/tvFileContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contenido del archivo"
+        android:padding="16dp"
+        android:textAlignment="center" />
+
 </LinearLayout>
