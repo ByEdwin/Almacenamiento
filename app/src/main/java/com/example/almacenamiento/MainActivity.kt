@@ -1,6 +1,7 @@
 package com.example.almacenamiento
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -37,5 +38,13 @@ class MainActivity : AppCompatActivity() {
             val text = reader.readText()
             binding.tvFileContent.text = text
         }
+
+        val arrayArchivos: Array<String> = fileList()
+
+        arrayArchivos.forEach { name ->
+            Log.i("Stored", name)
+
+        }
+
     }
 }
