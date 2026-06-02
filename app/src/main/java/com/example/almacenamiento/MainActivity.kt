@@ -26,5 +26,11 @@ class MainActivity : AppCompatActivity() {
 
         val path: String = filesDir.absolutePath
         binding.tvSandboxPath.text = path
+
+        val filename = "datos_usuario.txt"
+        val fileContents = "Puntaje: 1500\nNivel: 5"
+        openFileOutput(filename, MODE_PRIVATE).use { output ->
+            output.write(fileContents.toByteArray())
+        }
     }
 }
